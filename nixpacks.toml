@@ -1,8 +1,8 @@
 [phases.setup]
-  nixPkgs = ['...']
+nixPkgs = ['nodejs']
 
 [phases.build]
-  cmds = ['echo "Building static site..."']
+cmds = ['npm install -g serve']
 
 [phases.start]
-  cmds = ['npx serve -l 80']
+cmds = ['serve -s . -l $PORT']
